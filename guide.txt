@@ -1,0 +1,45 @@
+Trabalhando com o eslint
+
+O eslint eslint é uma mandeira de padronizarmos nosso projeto. Ele irá identificar possíveis vícios de programação, erros de sintaxe, e demais problemas que possamos enfrentar.
+
+Para rodarmos o eslint para que cheque nossos arquivos JS, basta utilizar o comando:
+
+    npm run lint
+
+Obs.: O eslint não identidica erros de lógica de programação. Essa parte é com a gente!
+
+-------------------------- // --------------------------
+
+Trabalhando com o tailwind
+
+O tailwind, caso não saibam, é uma biblioteca de estilos pré-definidos através de classes. Deixei tudo preparado para aqueles que prefiram trabalhar com o tailwind ao invés de CSS padrão.
+
+Para compilar os estilos para o arquivo de saída (src/output.css), basta utilizar o comando:
+
+    npm run tw
+
+Obs.: Lembre-se de acicionar o arquivo de saída na tag head do HTML de vocês.
+
+-------------------------- // --------------------------
+
+Trabalhando com o npm
+
+Caso queiram instalar algum outro pacote da preferência de vocês, utilizem o comando:
+
+    npm i package_name
+
+    Obs.: Utilizem -D no caso do pacote ser dependência de desenvolvimento.
+
+
+Já para remover um pacote, utilizem:
+
+    npm rm package_name
+
+
+Para que um pacote seja atualizado, basta rodar o comando de instalação nele novamente.
+
+-------------------------- // --------------------------
+
+                        ATENÇÃO!!!
+
+Deixem aqui documentados os pacotes que utilizarem (Caso afetem diretamente no funcionamento da aplicação), para que todos possam trabalhar sem problemas.
