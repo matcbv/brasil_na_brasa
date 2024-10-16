@@ -1,12 +1,12 @@
 Trabalhando com o eslint
 
-O eslint eslint é uma mandeira de padronizarmos nosso projeto. Ele irá identificar possíveis vícios de programação, erros de sintaxe, e demais problemas que possamos enfrentar.
+O eslint é uma ferramenta de linting responsável pela padronização de nossos projetos. Ele irá identificar possíveis vícios de programação, erros de sintaxe, e demais problemas que possamos enfrentar.
 
 Para rodarmos o eslint para que cheque nossos arquivos JS, basta utilizar o comando:
 
     npm run lint
 
-Obs.: O eslint não identidica erros de lógica de programação. Essa parte é com a gente!
+Obs.: O eslint não identifica erros de lógica de programação. Essa parte é com a gente!
 
 -------------------------- // --------------------------
 
@@ -18,7 +18,9 @@ Para compilar os estilos para o arquivo de saída (src/output.css), basta utiliz
 
     npm run tw
 
-Obs.: Lembre-se de acicionar o arquivo de saída na tag head do HTML de vocês.
+Não iremos trabalhar com o arquivo de output, e o de input deve ser destinado apenas para funcionalidades do tailwind.
+
+Obs.: Lembre-se de acicionar o arquivo de saída na tag head do HTML de vocês caso forem usar o tailwind.
 
 -------------------------- // --------------------------
 
