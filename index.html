@@ -8,22 +8,23 @@
     <title>Brasil na Panela</title>
 </head>
 <body>
-    <header class="flex flex-col bg-green-900 border-b-green-500 border-b-2">
-        <div class="">
-            <div class="flex">
+    <header class="flex flex-col bg-green-900 border-b-green-500 border-b-2 shadow-md">
+        <div class="flex justify-end bg-gradient-to-tr from-green-900 to-green-950 px-10 py-2">
+            <div class="flex items-center mr-5">
                 <img src="images/place_marker_icon.png" alt="Localização">
-                <p>Largo Brigadeiro</p>
+                <a class="font-sans no-underline text-white visited:text-white hover:text-yellow-400" href="index.html">Largo Brigadeiro</a>
             </div>
-            <div class="flex">
+            <div class="flex items-center">
                 <img src="images/phone_icon.png" alt="Contato">
-                <p>(24) 2252-2522</p>
+                <a class="font-sans no-underline text-white visited:text-white hover:text-yellow-400" href="index.html">(24) 2252-2522</a>
             </div>
         </div>
-        <div>
-            <img class="w-28" src="/images/brasil_na_panela_logo.png" alt="Logo Brasil na Panela">
-            <ul>
-                <li class="text-white">Contate-nos</li>
-                <li class="text-white">Sobre nós</li>
+        <div class="flex justify-between items-center px-10">
+            <img class="w-28 relative -top-4" src="/images/brasil_na_panela_logo.png" alt="Logo Brasil na Panela">
+            <ul class="flex list-none">
+                <li class="text-white font-sans mr-5 hover:text-yellow-400 cursor-pointer">Onde estamos</li>
+                <li class="text-white font-sans mr-5 hover:text-yellow-400 cursor-pointer">Contate-nos</li>
+                <li class="text-white font-sans hover:text-yellow-400 cursor-pointer">Sobre nós</li>
             </ul>
         </div>
     </header>
