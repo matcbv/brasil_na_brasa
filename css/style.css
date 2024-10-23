@@ -1,0 +1,33 @@
+.hero{
+    width: 100vw;
+    height: 90vh;
+    position: relative;
+    overflow-y: hidden;
+}
+
+.hero-content{
+    display: flex;
+    align-items: end;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    padding-left: 100px;
+}
+
+video{
+    width: 100%;
+}
+
+.hero-content p{
+    color: white;
+    font-size: 1.6rem;
+}
+
+.hero-content h1{
+    position: relative;
+    color: white;
+    font-size: 3.2rem;
+}
