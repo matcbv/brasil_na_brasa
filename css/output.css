@@ -110,10 +110,6 @@
   position: relative
 }
 
-.-top-4 {
-  top: -1rem
-}
-
 .-top-5 {
   top: -1.25rem
 }
@@ -138,16 +134,8 @@
   display: flex
 }
 
-.h-20 {
-  height: 5rem
-}
-
 .h-16 {
   height: 4rem
-}
-
-.w-28 {
-  width: 7rem
 }
 
 .w-24 {
@@ -176,11 +164,6 @@
 
 .justify-between {
   justify-content: space-between
-}
-
-.bg-green-950 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(5 46 22 / var(--tw-bg-opacity))
 }
 
 .bg-green-900 {
