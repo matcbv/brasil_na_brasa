@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/tailwind/output.css">
-    <link rel="stylesheet" href="/css/hero.css">
-    <link rel="stylesheet" href="/css/header.css">
-    <link rel="stylesheet" href="/css/global.css">
-    <link rel="stylesheet" href="/css/main.css">
-    <title>Brasil na Panela</title>
+    <link rel="stylesheet" href="public/assets/css/global.css">
+    <link rel="stylesheet" href="public/assets/css/header.css">
+    <link rel="stylesheet" href="public/assets/css/main.css">
+    <link rel="stylesheet" href="public/assets/css/tailwind/output.css">
+    <title>Brasil na Brasa</title>
 </head>
 <body>
     <header>
@@ -16,17 +15,16 @@
             <p>Brasil na Brasa</p>
         </div>
         <div class="nav-div">
-            <span></span>
             <nav>
                 <ul>
                     <li>Menu</li>
                     <li>Sobre nós</li>
                     <li>Contate-nos</li>
                     <li>
-                        <img src="/assets/images/header/carrinho.png" alt="Meu carrinho">
+                        <img src="public/assets/images/header/cart_icon.png" alt="Meu carrinho">
                     </li>
                     <li>
-                        <img src="/assets/images/header/conta.png" alt="Minha conta">
+                        <img src="public/assets/images/header/account_icon.png" alt="Minha conta">
                     </li>
                 </ul>
             </nav>
@@ -34,13 +32,13 @@
     </header>
     <main>
         <div class="hero">
-            <video autoplay loop muted src="/assets/videos/cozinhando.mp4"></video>
+            <video autoplay loop muted src="public/assets/videos/cozinhando.mp4"></video>
             <div class="hero-content">
                 <div>
                     <span class="slogan">
                         <h1>Brasil na Brasa</h1>
                         <p>O calor da brasa junto ao sabor do Brasil</p>
-                        <button>Conheça o menu</button>
+                        <button type="button">Conheça o menu</button>
                     </span>
                 </div>
             </div>
@@ -48,10 +46,15 @@
         <section class="recipes-section">
             <h2>Pratos principais</h2>
             <div>
-                <h3>Feijoada</h3>
-                <img src="/assets/images/sudeste/feijoada.png" alt="">
-                <p>Feijoada tradicional com feijão preto e cortes variados de carne suína, como costela, orelha, rabo, linguiça e carne-seca.</p>
-                <button>Adicionar ao carrinho<span>R$39,99</span></button>
+                <div class="recipes-content">
+                    <h3>Feijoada</h3>
+                    <p>Feijoada tradicional com feijão preto e cortes variados de carne suína, como costela, orelha, rabo, linguiça e carne-seca.</p>
+                    <button type="button">Adicionar ao carrinho <span>R$39,99</span></button>
+                </div>
+                <div class="recipes-image">
+                    <img src="public/assets/images/sudeste/feijoada.png" alt="Feijoada">
+                    <img class="smoke" src="public/assets/images/index/main/smoke.gif" alt="Fumaça">
+                </div>
             </div>
         </section>
     </main>
