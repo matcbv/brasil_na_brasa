@@ -8,11 +8,32 @@
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-.ingredients-section{
+.recipes-section div{
     display: flex;
-    justify-content: center;
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 300px;
+    padding: 20px;
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: rgb(0, 0, 0);
 }
 
-.ingredients-content{
-    width: 400px;
+.recipes-section h3{
+    color: white;
+    font-size: 2rem;
+}
+
+.recipes-section p{
+    font-size: 1.1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+.recipes-section button{
+    background-color: orange;
+}
+
+.recipes-section span{
+    background-color: white;
 }

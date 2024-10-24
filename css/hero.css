@@ -2,8 +2,9 @@
     max-width: 100vw;
     height: 85vh;
     position: relative;
-    top: -64px;
-    overflow-y: hidden;
+    top: -80px;
+    overflow: hidden;
+    border-bottom: 3px solid rgb(255, 218, 149);
 }
 
 .hero-content{
@@ -14,6 +15,7 @@
     z-index: 1;
     width: 100%;
     height: 100%;
+    padding-left: 100px;
     background-color: rgba(0, 0, 0, 0.85);
 }
 
@@ -30,7 +32,7 @@ video{
 .hero-content button{
     margin-top: 40px;
     padding: 15px 30px;
-    background-color: rgb(255, 216, 133, 0.6);
+    background-color: rgb(255, 203, 93, 0.6);
     border-radius: 5px;
     border: none;
     border-right: 2px solid rgb(255, 218, 149);
@@ -39,6 +41,10 @@ video{
     color: white;
     font-weight: bold;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+}
+
+.hero-content button:hover{
+    cursor: pointer;
 }
 
 .slogan p{
