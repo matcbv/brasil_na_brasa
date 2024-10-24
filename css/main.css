@@ -1,0 +1,18 @@
+.ingredients-bg{
+    width: 450px;
+    height: 300px;
+    background: transparent url('/assets/images/main/ingredientes.jpg') no-repeat center;
+    background-size: contain;
+    outline: 3px solid orange;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.ingredients-section{
+    display: flex;
+    justify-content: center;
+}
+
+.ingredients-content{
+    width: 400px;
+}

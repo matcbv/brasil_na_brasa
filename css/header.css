@@ -1,0 +1,41 @@
+header{
+    display: flex;
+    position: relative;
+    z-index: 2;
+    justify-content: space-between;
+    background-color: transparent;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-div{
+    width: 33.3%;
+    padding: 20px 0;
+    margin-right: -6px;
+    margin-left: 30px;
+}
+
+.title-div p{
+    visibility: hidden;
+    font-size: 2em;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+header ul{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    list-style: none;
+}
+
+header li{
+    font-size: 1.3rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+header li:hover{
+    text-decoration: underline orange;
+    text-underline-offset: 14px;
+    cursor: pointer;
+}
