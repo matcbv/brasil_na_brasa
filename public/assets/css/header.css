@@ -36,7 +36,7 @@ header li{
 }
 
 header li:hover{
-    text-decoration: underline orange 2px;
+    text-decoration: underline rgb(216, 154, 40) 2px;
     text-underline-offset: 14px;
     cursor: pointer;
 }
