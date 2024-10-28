@@ -1,7 +1,6 @@
 /* ------------- HERO BANNER ------------- */
 
 .hero{
-    max-width: 100vw;
     height: 90vh;
     position: relative;
     overflow: hidden;
@@ -17,11 +16,12 @@
     width: 100%;
     height: 100%;
     padding-left: 100px;
-    background-color: rgba(0, 0, 0, 0.85);
 }
 
 video{
-    width: 100%;
+    width: 100vw;
+    filter: brightness(0.4);
+    object-fit: cover;
 }
 
 .hero-content div{
@@ -42,10 +42,12 @@ video{
     color: white;
     font-weight: bold;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.2s linear 0s;
 }
 
 .hero-content button:hover{
     cursor: pointer;
+    background-color: rgb(255, 203, 93, 0.8);
 }
 
 .slogan p{
@@ -69,13 +71,16 @@ video{
 /* ------------- MAIN ------------- */
 
 section{
-    margin: 200px 0;
+    max-width: 100vw;
     overflow-x: hidden;
+    margin-bottom: 120px;
 }
+
+/* ------------- RECIPES SECTION ------------- */
 
 .recipes-title{
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 2rem;
+    font-size: 2.2rem;
     color: antiquewhite;
     text-align: center;
 }
@@ -85,7 +90,7 @@ section{
     position: relative;
     justify-content: center;
     align-items: center;
-    padding: 40px 0;
+    padding: 80px 0;
 }
 
 .recipes-carousel > div{
@@ -107,14 +112,7 @@ section{
 }
 
 .recipes-carousel .emphasis:hover{
-    transform: skewX(-0.5deg);
-}
-
-.recipes-carousel h2{
-    font-size: 3rem;
-    font-family: Arial, Helvetica, sans-serif;
-    color: antiquewhite;
-    margin-bottom: 80px;
+    transform: scale(1.01);
 }
 
 .recipes-content{
@@ -126,11 +124,12 @@ section{
     border-radius: 10px;
     width: 300px;
     height: 300px;
+    margin-right: 10px;
 }
 
 .recipes-content h3{
     color: white;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-family: Arial, Helvetica, sans-serif;
     width: 90%;
     padding-bottom: 10px;
@@ -140,9 +139,10 @@ section{
 .recipes-content p{
     font-family: Arial, Helvetica, sans-serif;
     color: white;
+    font-size: 0.9rem;
 }
 
-.recipes-content button{
+.price-btn{
     background-color: rgb(177, 140, 61);
     border-radius: 20px;
     padding-left: 10px;
@@ -151,12 +151,12 @@ section{
     font-weight: bold;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
     overflow: hidden;
-    transition: transform 0.3s linear 0s;
+    transition: background-color 0.2s linear 0s;
 }
 
-.recipes-content button:hover{
+.price-btn:hover{
     cursor: pointer;
-    transform: scale(1.03);
+    background-color: rgb(216, 154, 40);
 }
 
 .price{
@@ -214,24 +214,28 @@ section{
     padding-right: 30px;
 }
 
+/* ------------- INFO SECTION ------------- */
+
 .info-section{
     display: flex;
     position: relative;
-    border-top: 2px solid white;
+    border-top: 2px solid rgb(255, 218, 149);
+    border-bottom: 2px solid rgb(255, 218, 149);
+    height: 90vh;
 }
 
 .outer-content{
     display: flex;
-    height: 50%;
-    max-width: 40%;
+    width: 800px;
     position: absolute;
     background-color: transparent;
 }
 
 .border-span{
-    padding: 20px;
-    border-bottom: 2px solid black;
-    border-right: 2px solid black;
+    height: 100%;
+    padding: 50px 20px 20px 50px;
+    border-bottom: 3px solid black;
+    border-right: 3px solid black;
 }
 
 .info-content{
@@ -239,9 +243,9 @@ section{
     flex-flow: column nowrap;
     justify-content: center;
     align-items: start;
-    row-gap: 40px;
+    row-gap: 30px;
     height: 100%;
-    padding: 30px;
+    padding: 50px 50px 20px 50px;
     background-color: rgba(0, 0, 0, 0.7);
     border-bottom: 2px solid antiquewhite;
     border-right: 2px solid antiquewhite;
@@ -249,19 +253,19 @@ section{
 
 .info-content h2{
     color: antiquewhite;
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .info-content p{
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.2rem;
+    line-height: 1.6rem;
     color: antiquewhite;
 }
 
 .info-content button{
-    padding: 15px 30px;
-    background-color: rgb(255, 203, 93, 0.6);
+    padding: 12px 30px;
+    background-color: rgb(255, 203, 93, 0.5);
     border-radius: 5px;
     border: none;
     border-right: 2px solid rgb(255, 218, 149);
@@ -270,4 +274,22 @@ section{
     color: white;
     font-weight: bold;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.2s linear 0s;
+}
+
+.info-content button:hover{
+    cursor: pointer;
+    background-color: rgb(255, 203, 93, 0.8);
+}
+
+/* ------------- DESSERT SECTION ------------- */
+
+.dessert-section{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+.dessert-section > div{
+
 }

@@ -6,7 +6,7 @@ header{
     justify-content: space-between;
     background-color: transparent;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px 0;
+    padding: 15px 0;
 }
 
 .nav-div{
@@ -29,7 +29,7 @@ header ul{
 }
 
 header li{
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
     font-weight: bold;
@@ -37,6 +37,6 @@ header li{
 
 header li:hover{
     text-decoration: underline rgb(216, 154, 40) 2px;
-    text-underline-offset: 14px;
+    text-underline-offset: 12px;
     cursor: pointer;
 }
