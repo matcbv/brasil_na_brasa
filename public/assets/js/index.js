@@ -1,6 +1,7 @@
 const carousel = document.querySelector('.recipes-carousel');
 const toRigth = document.querySelector('.right-span');
 const toLeft = document.querySelector('.left-span');
+const menuBtn = document.querySelector('.menu-btn');
 
 toRigth.addEventListener('click', () => {
     const emphasisItem = carousel.querySelector('.emphasis');
@@ -9,3 +10,18 @@ toRigth.addEventListener('click', () => {
     emphasisItem.classList.remove('emphasis');
     carousel.appendChild(carousel.removeChild(emphasisItem));
 });
+
+// Evento para ativar prompt do prato do dia
+menuBtn.addEventListener('click', () => {
+    const nome = prompt("Digite seu nome:");
+
+    const pratos = ["Feijoada", "Lasanha", "Strogonoff", "Macarrão", "Pizza", "Sushi", "Frango"];
+
+    const diaSemana = new Date().getDay();
+
+    const pratoDoDia = pratos[diaSemana];
+
+    const mensagem = `Olá, ${nome}! O prato do dia é ${pratoDoDia}!`;
+
+    alert(mensagem);
+})

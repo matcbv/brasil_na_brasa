@@ -5,9 +5,7 @@ import pluginJs from "@eslint/js";
 export default [
   {
     files: ["js/*.js"],
-    languageOptions: { globals: globals.browser }
-  },
-  {
+    languageOptions: { globals: globals.browser },
     rules: {
       eqeqeq: ["error"],
       curly: ["error"],
@@ -15,7 +13,7 @@ export default [
       camelcase: ["error"]
     }
   },
-  pluginJs.configs.recommended,
+  ...pluginJs.configs.recommended,
   {
     ignores: [
       'node_modules',
