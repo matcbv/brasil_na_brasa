@@ -9,6 +9,10 @@ header{
     padding: 20px 0;
 }
 
+.animations{
+    animation: change-bg-color 0.5s ease-in-out 0s 1 normal forwards;
+}
+
 .nav-div{
     width: 50%;
 }
@@ -39,4 +43,13 @@ header li:hover{
     text-decoration: underline rgb(216, 154, 40) 2px;
     text-underline-offset: 12px;
     cursor: pointer;
+}
+
+@keyframes change-bg-color {
+    from{
+        background-color: transparent;
+    }
+    to{
+        background-color: black;
+    }
 }
