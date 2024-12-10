@@ -13,25 +13,29 @@ document.addEventListener('scroll', () => {
 
 // ----------- Main Animations -----------
 
+const carousel = document.querySelector('.recipes')
 const arrows = document.querySelectorAll('.arrow');
 const items = document.querySelectorAll('.item');
 
-let currentItem = 0;
+let currentItem = 2;
 const maxItem = items.length;
 
 arrows.forEach((arrow) => {
     arrow.addEventListener('click', () => {
-        console.log('opa');
         if(arrow.classList.contains('left-span')){
             currentItem -= 1;
+            console.log(items[maxItem - 1])
+            carousel.insertBefore(items[maxItem - 1], carousel.firstChild);
+            carousel.lastChild.remove();
         } else{
             currentItem += 1;
+            carousel.appendChild(items[0])
+            items[0].remove();
         };
 
         if(currentItem >= maxItem){
             currentItem = 0;
         } else if(currentItem < 0){
-            console.log('entreiii')
             currentItem = maxItem - 1;
         }
 
@@ -41,7 +45,10 @@ arrows.forEach((arrow) => {
 
         items[currentItem].scrollIntoView({
             inline: "center",
-            behavior: "smooth"
+            behavior: "smooth",
+            block: "nearest"
         })
+
+        items[currentItem].classList.add('emphasis');
     });
 });

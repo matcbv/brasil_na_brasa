@@ -8,11 +8,12 @@
 .carousel-container{
     position: relative;
     display: flex;
-
+    justify-content: center;
 }
 
 .recipes-wrapper{
-    overflow-x: hidden;
+    overflow-x: auto;
+    scroll-behavior: smooth;
     padding: 20px 0;
 }
 
@@ -135,14 +136,14 @@
 }
 
 .right-span{
-    right: -130px;
+    right: 0;
     border-radius: 100% 0 0 100%;
     padding-left: 30px;
 }
 
 .left-span{
     justify-content: flex-end;
-    left: -130px;
+    left: 0;
     border-radius: 0 100% 100% 0;
     padding-right: 30px;
 }
