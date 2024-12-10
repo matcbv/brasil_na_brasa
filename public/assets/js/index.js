@@ -13,20 +13,14 @@ document.addEventListener('scroll', () => {
 
 // ----------- Main Animations -----------
 
-const toLeft = document.querySelector('.left-span');
-const toRight = document.querySelector('.right-span');
-const carouselContainer = document.querySelector('.recipes-carousel')
+const arrows = document.querySelectorAll('.arrow');
+const items = document.querySelectorAll('.item');
 
-toLeft.addEventListener('click', () => {
-    const mainDish = document.querySelector('.emphasis');
-    const nextDish = mainDish.previousElementSibling;
-    mainDish.classList.remove('emphasis');
-    nextDish.classList.add('emphasis');
-})
+let currentItem = 0;
+const maxItem = items.length;
 
-toRight.addEventListener('click', () => {
-    const mainDish = document.querySelector('.emphasis');
-    const nextDish = mainDish.nextElementSibling;
-    mainDish.classList.remove('emphasis');
-    nextDish.classList.add('emphasis');
+arrows.forEach(arrow, () => {
+   arrow.addEventListener('click', () => {
+      
+   })
 })
