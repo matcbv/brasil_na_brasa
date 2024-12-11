@@ -3,7 +3,6 @@ header{
     display: flex;
     position: fixed;
     z-index: 2;
-    justify-content: space-between;
     background-color: transparent;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px 0;
@@ -11,6 +10,12 @@ header{
 
 .animations{
     animation: change-bg-color 0.5s ease-in-out 0s 1 normal forwards;
+}
+
+nav{
+    display: flex;
+    justify-content: flex-end;
+    width: 100vw;
 }
 
 .nav-div{
@@ -26,10 +31,11 @@ header{
 
 header ul{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-end;
+    column-gap: 60px;
     align-items: center;
-    width: 100%;
     list-style: none;
+    margin-right: 50px;
 }
 
 header li{

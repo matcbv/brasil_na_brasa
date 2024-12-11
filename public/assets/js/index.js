@@ -1,4 +1,4 @@
-// ----------- Header Animations -----------
+// ----------- Header Animation -----------
 
 const header = document.querySelector('header');
 
@@ -11,44 +11,21 @@ document.addEventListener('scroll', () => {
     };
 });
 
-// ----------- Main Animations -----------
+// ----------- Carousel Animation -----------
 
 const carousel = document.querySelector('.recipes')
 const arrows = document.querySelectorAll('.arrow');
-const items = document.querySelectorAll('.item');
-
-let currentItem = 2;
-const maxItem = items.length;
+let items = document.querySelectorAll('.item');
 
 arrows.forEach((arrow) => {
     arrow.addEventListener('click', () => {
-        if(arrow.classList.contains('left-span')){
-            currentItem -= 1;
-            console.log(items[maxItem - 1])
-            carousel.insertBefore(items[maxItem - 1], carousel.firstChild);
-            carousel.lastChild.remove();
-        } else{
-            currentItem += 1;
-            carousel.appendChild(items[0])
-            items[0].remove();
-        };
-
-        if(currentItem >= maxItem){
-            currentItem = 0;
-        } else if(currentItem < 0){
-            currentItem = maxItem - 1;
-        }
 
         items.forEach((item) => {
             item.classList.remove('emphasis');
         });
 
-        items[currentItem].scrollIntoView({
-            inline: "center",
-            behavior: "smooth",
-            block: "nearest"
-        })
-
-        items[currentItem].classList.add('emphasis');
+        arrow.classList.contains('left-span') ? carousel.prepend(carousel.lastElementChild): carousel.appendChild(carousel.firstElementChild);
+        items = carousel.querySelectorAll('.item');
+        items[2].classList.add('emphasis');
     });
 });

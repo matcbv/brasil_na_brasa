@@ -6,14 +6,14 @@
 }
 
 .carousel-container{
+    margin-top: 40px;
     position: relative;
     display: flex;
     justify-content: center;
 }
 
 .recipes-wrapper{
-    overflow-x: auto;
-    scroll-behavior: smooth;
+    overflow-x: hidden;
     padding: 20px 0;
 }
 
@@ -118,7 +118,7 @@
     opacity: 0.1;
     top: -120px;
     left: -40px;
-    width: 300px;
+    width: 300px !important;
 }
 
 .right-span, .left-span{
