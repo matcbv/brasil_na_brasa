@@ -1,3 +1,16 @@
+// ----------- Hero Banner Button -----------
+
+const bannerBtn = document.querySelector('.menu-btn');
+const recipesSection = document.querySelector('.recipes-section');
+
+bannerBtn.addEventListener('click', () => {
+    recipesSection.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+        inline: "center"
+    })
+})
+
 // ----------- Header Animation -----------
 
 const header = document.querySelector('header');

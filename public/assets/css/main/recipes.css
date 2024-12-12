@@ -136,14 +136,14 @@
 }
 
 .right-span{
-    right: 0;
+    right: -130px;
     border-radius: 100% 0 0 100%;
     padding-left: 30px;
 }
 
 .left-span{
     justify-content: flex-end;
-    left: 0;
+    left: -130px;
     border-radius: 0 100% 100% 0;
     padding-right: 30px;
 }
