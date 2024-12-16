@@ -51,6 +51,20 @@ header li:hover{
     cursor: pointer;
 }
 
+.counter{
+    color: white;
+    border-radius: 100%;
+    padding: 0px 4px;
+    background-color: orange;
+    position: absolute;
+    right: -14px;
+    top: -6px;
+}
+
+.cart-container{
+    position: relative;
+}
+
 @keyframes change-bg-color {
     from{
         background-color: transparent;

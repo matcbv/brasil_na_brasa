@@ -1,0 +1,95 @@
+.popup{
+    background-color: #0c0c0c;
+    border: 2px solid rgb(177, 140, 61);
+    border-radius: 10px;
+    width: 450px;
+    position: fixed;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    padding: 30px;
+    display: none;
+    flex-flow: column nowrap;
+    row-gap: 40px;
+}
+
+.popup h1{
+    color: antiquewhite;
+    font-size: 1.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    order: 0;
+}
+
+.items-container{
+    order: 1;
+}
+
+.item{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgb(255, 218, 149);
+    width: 70%;
+    padding: 0 4px;
+}
+
+.item p{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.recipe-name{
+    color: rgb(216, 154, 40);
+    font-size: 1.2rem;
+}
+
+.recipe-price{
+    color: white;
+}
+
+.close-icon{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+
+.close-icon:hover{
+    cursor: pointer;
+}
+
+.item-count{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 8px;
+}
+
+.quantity-container{
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.quantity-container img:hover{
+    cursor: pointer;
+}
+
+.spacement{
+    color: white;
+    margin: 0 15px;
+}
+
+.checkout{
+    width: 50%;
+    background-color: rgb(177, 140, 61);
+    border-radius: 5px;
+    border: 2px solid rgb(233, 189, 109);
+    padding: 5px 0;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+    order: 2;
+}
+
+.checkout:hover{
+    cursor: pointer;
+    border-color: wheat;
+}

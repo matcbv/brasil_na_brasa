@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="public/assets/css/global.css">
     <link rel="stylesheet" href="public/assets/css/header.css">
+    <link rel="stylesheet" href="public/assets/css/main/cart.css">
     <link rel="stylesheet" href="public/assets/css/main/hero_banner.css">
     <link rel="stylesheet" href="public/assets/css/main/recipes.css">
     <link rel="stylesheet" href="public/assets/css/main/info.css">
@@ -12,6 +13,7 @@
     <link rel="stylesheet" href="public/assets/css/main/dessert.css">
     <link rel="stylesheet" href="public/assets/css/footer.css">
     <link rel="stylesheet" href="public/assets/css/tailwind/output.css">
+    <link rel="shortcut icon" href="public/assets/images/header/B.png" type="image/x-icon">
     <title>Brasil na Brasa</title>
 </head>
 <body>
@@ -22,8 +24,9 @@
                     <li>Cardápio</li>
                     <li>Meus pedidos</li>
                     <li>Promoções</li>
-                    <li>
-                        <img src="public/assets/images/header/cart_icon.png" alt="Meu carrinho">
+                    <li class="cart-container">
+                        <span class="counter"></span>
+                        <img class="cart-icon" src="public/assets/images/header/cart_icon.png" alt="Meu carrinho">
                     </li>
                     <li>
                         <img src="public/assets/images/header/account_icon.png" alt="Minha conta">
@@ -57,7 +60,7 @@
                             <div class="recipes-content">
                                 <h3>Galinhada</h3>
                                 <p>Galinhada preparada com arroz temperado e pedaços suculentos de frango, combinados com o sabor marcante do pequi, ervas frescas e especiarias, criando um prato típico e aromático.</p>
-                                <button class="price-btn" type="button">Adicionar ao carrinho <span class="price"><span>R$ 39,90</span></span></button>
+                                <button class="button price-btn" type="button">Adicionar ao carrinho <span class="price"><span>R$ 29,90</span></span></button>
                             </div>
                             <div class="recipes-image">
                                 <img src="public/assets/images/centro_oeste/galinhada_com_pequi.png" alt="Galinhada">
@@ -68,7 +71,7 @@
                             <div class="recipes-content">
                                 <h3>Acarajé</h3>
                                 <p>Bolinho de feijão-fradinho frito no azeite de dendê, recheado com vatapá cremoso, camarão seco e salada, servido com molho de pimenta para um toque especial da culinária baiana.</p>
-                                <button class="price-btn" type="button">Adicionar ao carrinho <span class="price"><span>R$ 39,90</span></span></button>
+                                <button class="button price-btn" type="button">Adicionar ao carrinho <span class="price"><span>R$ 34,90</span></span></button>
                             </div>
                             <div class="recipes-image">
                                 <img src="public/assets/images/nordeste/acaraje.png" alt="Acarajé">
@@ -79,7 +82,7 @@
                             <div class="recipes-content">
                                 <h3>Feijoada</h3>
                                 <p>Feijoada tradicional preparada com feijão preto e uma variedade de cortes suínos, incluindo costela, orelha, rabo, linguiça e carne-seca, temperados com especiarias e acompanhados de arroz, couve refogada e laranja.</p>
-                                <button class="price-btn" type="button">Adicionar ao carrinho <span class="price"><span>R$ 39,90</span></span></button>
+                                <button class="button price-btn" type="button">Adicionar ao carrinho <span class="price"><span>R$ 39,90</span></span></button>
                             </div>
                             <div class="recipes-image">
                                 <img src="public/assets/images/sudeste/feijoada.png" alt="Feijoada">
@@ -90,7 +93,7 @@
                             <div class="recipes-content">
                                 <h3>Churrasco</h3>
                                 <p>Carnes selecionadas como picanha, costela e linguiça assadas na brasa, temperadas com sal grosso, acompanhadas de farofa crocante, vinagrete e pão de alho.</p>
-                                <button class="price-btn" type="button">Adicionar ao carrinho <span class="price"><span>R$ 39,90</span></span></button>
+                                <button class="button price-btn" type="button">Adicionar ao carrinho <span class="price"><span>R$ 69,90</span></span></button>
                             </div>
                             <div class="recipes-image">
                                 <img src="public/assets/images/sul/churrasco.png" alt="Churrasco">
@@ -101,7 +104,7 @@
                             <div class="recipes-content">
                                 <h3>Tacacá</h3>
                                 <p>Sopa amazônica feita com tucupi aromático, goma de mandioca, jambu que dá sensação de dormência e camarões frescos, trazendo os sabores únicos da região Norte.</p>
-                                <button class="price-btn" type="button">Adicionar ao carrinho <span class="price"><span>R$ 39,90</span></span></button>
+                                <button class="button price-btn" type="button">Adicionar ao carrinho <span class="price"><span>R$ 39,90</span></span></button>
                             </div>
                             <div class="recipes-image">
                                 <img src="public/assets/images/norte/tacaca.png" alt="Tacacá">
@@ -138,7 +141,7 @@
                         <img src="./public/assets/images/desserts/acai.png" alt="Açaí">
                     </div>
                     <p>Açaí na tigela preparado com a polpa cremosa da fruta, acompanhado de granola crocante, morango e banana fatiados e complementos como mel e castanhas.</p>
-                    <button class="dessert-btn" type="button"><span class="btn-text">Adicionar ao carrinho</span> <span class="dessert-price">R$ 14,90</span></button>
+                    <button class="button dessert-btn" type="button"><span class="btn-text">Adicionar ao carrinho</span> <span class="price dessert-price">R$ 14,90</span></button>
                 </div>
                 <div class="dessert">
                     <h3>Pudim</h3>
@@ -146,7 +149,7 @@
                         <img src="./public/assets/images/desserts/pudim.png" alt="Pudim">
                     </div>
                     <p>Pudim de leite condensado cremoso e suave, feito com leite condensado, ovos e leite, assado em banho-maria e coberto com uma calda de caramelo.</p>
-                    <button class="dessert-btn" type="button"><span class="btn-text">Adicionar ao carrinho</span> <span class="dessert-price">R$ 19,90</span></button>
+                    <button class="button dessert-btn" type="button"><span class="btn-text">Adicionar ao carrinho</span> <span class="price dessert-price">R$ 19,90</span></button>
                 </div>
                 <div class="dessert">
                     <h3>Cartola</h3>
@@ -154,7 +157,7 @@
                         <img src="./public/assets/images/desserts/cartola.png" alt="Cartola">
                     </div>
                     <p>Cartola feita com fatias de banana fritas, cobertas com queijo coalho derretido e polvilhadas com açúcar e canela.</p>
-                    <button class="dessert-btn" type="button"><span class="btn-text">Adicionar ao carrinho</span> <span class="dessert-price">R$ 16,90</span></button>
+                    <button class="button dessert-btn" type="button"><span class="btn-text">Adicionar ao carrinho</span> <span class="price dessert-price">R$ 16,90</span></button>
                 </div>
             </div>
         </section>
@@ -179,6 +182,12 @@
             <p class="copyright">© 2024 Restaurante Brasil na Brasa. Todos os direitos reservados.</p>
         </div>
     </footer>
+    <div class="popup">
+        <img class="close-icon" src="../public/assets/images/popup/close_icon.png" alt="Fechar">
+        <h1>Meu carrinho</h1>
+        <div class="items-container"></div>
+        <button class="checkout" type="button">Finalizar compra</button>
+    </div>
     <script src="public/assets/js/index.js"></script>
 </body>
 </html>
