@@ -48,7 +48,9 @@ arrows.forEach((arrow) => {
 const popup = document.querySelector('.popup');
 const buttons = document.querySelectorAll('.button');
 const cartIcon = document.querySelector('.cart-icon');
-const closeIcon = document.querySelector('.close-icon')
+const closeIcon = document.querySelector('.close-icon');
+const checkout = document.querySelector('.checkout');
+const totalSpan = document.querySelector('.total-value');
 const counter = document.querySelector('.counter');
 const itemsContainer = document.querySelector('.items-container');
 
@@ -77,58 +79,103 @@ buttons.forEach(btn => {
         if(recipesInCart){
             let recipesArr = JSON.parse(recipesInCart);
             
-            if(recipesArr.some(obj => obj.recipe === recipeName)){
+            if(recipesArr.some(obj => obj.name === recipeName)){
                 recipesArr.forEach(obj => {
-                    if(obj.recipe === recipeName){
-                        obj.i += 1;
+                    if(obj.name === recipeName){
+                        obj.index += 1;
                     };
                 });
             } else{
-                addRecipeInCart(recipeName, recipeValue)
-                recipesArr.push({recipe: recipeName, i: 1});
+                recipesArr.push({name: recipeName, value: recipeValue, index: 1});
             };
 
             sessionStorage.setItem('recipesInCart', JSON.stringify(recipesArr));
         } else{
-            const recipesJSON = JSON.stringify([{recipe: recipeName, i: 1}])
+            const recipesJSON = JSON.stringify([{name: recipeName, value: recipeValue, index: 1}]);
             sessionStorage.setItem('recipesInCart', recipesJSON);
         };
     });
 });
 
-cartIcon.addEventListener('click', () => popup.style.display = "flex" );
+cartIcon.addEventListener('click', () => {
+    addRecipeInCart();
+    popup.style.display = "flex";
+});
 closeIcon.addEventListener('click', () => popup.style.display = "none" );
 
-function addRecipeInCart(itemName, itemValue){
-    const item = document.createElement('div');
-    item.classList.add('item')
-    item.innerHTML = cartItem;
-    item.querySelector('.recipe-name').innerHTML = itemName;
-    console.log(item.querySelector('.recipe-price'))
-    item.querySelector('.recipe-price').innerHTML = itemValue;
-    console.log(item.querySelector('.recipe-price'))
-    item.querySelector('.item-count').innerHTML = 1;
-    itemsContainer.appendChild(item);
-    popup.appendChild(itemsContainer);
+function addRecipeInCart(){
+    const recipesInCart = sessionStorage.getItem('recipesInCart');
+    if(recipesInCart){
+        let totalValue = 0;
+        const recipesArr = JSON.parse(recipesInCart)
+        itemsContainer.innerHTML = '';
+        recipesArr.forEach(obj => {
+            const {name, value, index} = obj;
+            
+            const item = document.createElement('div');
+            item.classList.add('item');
+            item.innerHTML = cartItem;
+            item.querySelector('.recipe-name').innerHTML = name;
+            item.querySelector('.recipe-price').innerHTML = value;
+            item.querySelector('.item-count').innerHTML = index;
+            
+            itemsContainer.appendChild(item);
+
+            addIconEvents(item, recipesArr)
+
+            const valueToSum = (Array.from(value).slice(3, )).join('').replace(',', '.');
+            totalValue += parseInt(index, 10) * Number.parseFloat(valueToSum);
+        });
+        totalSpan.innerHTML = `R$ ${totalValue.toFixed(2)}`;
+    } else{
+        const p = document.createElement('p');
+        p.innerHTML = 'Ops... Seu carrinho está vazio!';
+        itemsContainer.innerHTML = '';
+        itemsContainer.appendChild(p);
+        checkout.disabled = true;
+        totalSpan.innerHTML = `R$ 00,00`;
+    }
 };
 
-// ----------- Cart Popup Animation -----------
-
-if(document.body.contains(document.querySelector('.popup'))){
-    const quantityIcons = document.querySelectorAll('.quantity-icon');
-    const itemCount = document.querySelector('.item-count')
+function addIconEvents(item, recipesInCart){
+    const quantityIcons = item.querySelectorAll('.quantity-icon');
+    const itemCount = item.querySelector('.item-count');
 
     quantityIcons.forEach(icon => {
-        icon.classList.contains('remove-icon') ? addEvents(icon, '#fb5858'): addEvents(icon, '#6bbb6e');
-    });
-};
+        if(icon.classList.contains('remove-icon')){
+            icon.addEventListener('mouseover', () => {
+                itemCount.style.color = '#fb5858';
+            });
 
-function addEvents(icon, color){
-    icon.addEventListener('mouseover', () => {
-        itemCount.style.color = color;
-    });
+            icon.addEventListener('click', () => {
+                const recipeName = item.querySelector('.recipe-name');
+                recipesInCart.forEach(obj => {
+                    if(obj.name === recipeName.innerHTML){
+                        obj.index -= 1;
+                        itemCount.innerHTML = parseInt(itemCount.innerHTML) - 1;
+                    };
+                });
+            });
 
-    icon.addEventListener('mouseleave', () => {
-        itemCount.style.color = 'white';
-    });
-};
+            sessionStorage.setItem('recipesInCart', JSON.stringify(recipesInCart));
+        }else{
+            icon.addEventListener('mouseover', () => {
+                itemCount.style.color = '#6bbb6e';
+            });
+
+            icon.addEventListener('click', () => {
+                const recipeName = item.querySelector('.recipe-name');
+                recipesInCart.forEach(obj => {
+                    if(obj.name === recipeName.innerHTML){
+                        obj.index += 1;
+                        itemCount.innerHTML = parseInt(itemCount.innerHTML) + 1;
+                    };
+                });
+            });
+        }
+
+        icon.addEventListener('mouseleave', () => {
+            itemCount.style.color = 'white';
+        });
+    })
+}
