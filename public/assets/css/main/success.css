@@ -1,0 +1,17 @@
+.success-div{
+    background-color: rgba(158, 236, 158, 0.9);
+    position: fixed;
+    top: 25%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    z-index: 999;
+    padding: 40px 60px;
+    border-radius: 10px;
+    border: 2px solid rgb(22, 51, 22);
+}
+
+.success-div p{
+    font-size: 1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(22, 51, 22);
+}

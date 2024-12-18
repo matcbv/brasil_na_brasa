@@ -51,8 +51,8 @@ const cartIcon = document.querySelector('.cart-icon');
 const closeIcon = document.querySelector('.close-icon');
 const checkout = document.querySelector('.checkout');
 const totalSpan = document.querySelector('.total-value');
-const counter = document.querySelector('.counter');
 const itemsContainer = document.querySelector('.items-container');
+const cartContainer = document.querySelector('.cart-container');
 
 const cartItem = 
 `<p class="recipe-name"></p>
@@ -69,8 +69,16 @@ let index = 0;
 buttons.forEach(btn => {
     btn.addEventListener('click', () => {
         index += 1;
-        counter.innerText = index;
-
+        const counterSpan = document.querySelector('.counter')
+        if(!cartContainer.contains(counterSpan)){
+            const counterSpan = document.createElement('span');
+            counterSpan.classList.add('counter');
+            counterSpan.innerHTML = index;
+            cartContainer.prepend(counterSpan);
+        } else{
+            counterSpan.innerHTML = index;
+        };
+        
         const recipesInCart = sessionStorage.getItem('recipesInCart');
         const recipeContainer = btn.parentElement;
         const recipeName = recipeContainer.querySelector('h3').innerText;
@@ -101,6 +109,7 @@ cartIcon.addEventListener('click', () => {
     addRecipeInCart();
     popup.style.display = "flex";
 });
+
 closeIcon.addEventListener('click', () => popup.style.display = "none" );
 
 function addRecipeInCart(){
@@ -111,20 +120,22 @@ function addRecipeInCart(){
         itemsContainer.innerHTML = '';
         recipesArr.forEach(obj => {
             const {name, value, index} = obj;
-            
-            const item = document.createElement('div');
-            item.classList.add('item');
-            item.innerHTML = cartItem;
-            item.querySelector('.recipe-name').innerHTML = name;
-            item.querySelector('.recipe-price').innerHTML = value;
-            item.querySelector('.item-count').innerHTML = index;
-            
-            itemsContainer.appendChild(item);
-
-            addIconEvents(item, recipesArr)
-
-            const valueToSum = (Array.from(value).slice(3, )).join('').replace(',', '.');
-            totalValue += parseInt(index, 10) * Number.parseFloat(valueToSum);
+            if(index > 0){
+                const item = document.createElement('div');
+                item.classList.add('item');
+                item.innerHTML = cartItem;
+                item.querySelector('.recipe-name').innerHTML = name;
+                item.querySelector('.recipe-price').innerHTML = value;
+                item.querySelector('.item-count').innerHTML = index;
+                
+                itemsContainer.appendChild(item);
+    
+                addIconEvents(item, recipesArr)
+    
+                const valueToSum = (Array.from(value).slice(3, )).join('').replace(',', '.');
+                totalValue += parseInt(index, 10) * Number.parseFloat(valueToSum);
+                checkout.disabled = false;
+            }
         });
         totalSpan.innerHTML = `R$ ${totalValue.toFixed(2)}`;
     } else{
@@ -152,12 +163,14 @@ function addIconEvents(item, recipesInCart){
                 recipesInCart.forEach(obj => {
                     if(obj.name === recipeName.innerHTML){
                         obj.index -= 1;
+                        if (obj.index <= 0){
+                            item.remove();
+                        }
                         itemCount.innerHTML = parseInt(itemCount.innerHTML) - 1;
                     };
                 });
+                sessionStorage.setItem('recipesInCart', JSON.stringify(recipesInCart));
             });
-
-            sessionStorage.setItem('recipesInCart', JSON.stringify(recipesInCart));
         }else{
             icon.addEventListener('mouseover', () => {
                 itemCount.style.color = '#6bbb6e';
@@ -168,9 +181,13 @@ function addIconEvents(item, recipesInCart){
                 recipesInCart.forEach(obj => {
                     if(obj.name === recipeName.innerHTML){
                         obj.index += 1;
+                        if (obj.index <= 0){
+                            item.remove();
+                        }
                         itemCount.innerHTML = parseInt(itemCount.innerHTML) + 1;
                     };
                 });
+                sessionStorage.setItem('recipesInCart', JSON.stringify(recipesInCart));
             });
         }
 
@@ -179,3 +196,24 @@ function addIconEvents(item, recipesInCart){
         });
     })
 }
+
+checkout.addEventListener('click', () => {
+    popup.style.display = 'none';
+    sessionStorage.setItem('recipesInCart', '');
+    const counter = document.querySelector('.counter');
+    counter.remove();
+    index = 0;
+
+    const successMsg = document.querySelector('p');
+    successMsg.innerHTML = 'Compra finalizada com sucesso!'
+    const successPopup = document.createElement('div');
+    successPopup.appendChild(successMsg);
+    successPopup.classList.add('success-div');
+    document.body.appendChild(successPopup);
+
+    setTimeout(() => {
+        successPopup.remove();
+    }, 3000)
+})
+
+
