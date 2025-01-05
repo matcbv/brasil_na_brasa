@@ -100,3 +100,7 @@
 .total-value{
     color: rgb(216, 154, 40);
 }
+
+.disabled:hover{
+    cursor: not-allowed;
+}

@@ -16,7 +16,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     max-width: 80%;
-    column-gap: 50px;
+    column-gap: 80px;
     padding-top: 80px;
 }
 
@@ -83,6 +83,7 @@
     padding: 10px;
     background-color: rgb(218, 218, 218);
     color: black;
+    transform: none;
 }
 
 .dessert-btn:hover{
