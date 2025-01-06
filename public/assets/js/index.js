@@ -54,9 +54,9 @@ class Cart{
         <span class="spacement"> - </span>
         <p class="recipe-price"></p>
         <div class="quantity-container">
-            <img class="quantity-icon remove-icon" src="../public/assets/images/popup/remove_icon.png" alt="Remover">
+            <img class="quantity-icon remove-icon" src="./public/assets/images/popup/remove_icon.png" alt="Remover">
             <span class="item-count"></span>
-            <img class="quantity-icon add-icon" src="../public/assets/images/popup/add_icon.png" alt="Adicionar">
+            <img class="quantity-icon add-icon" src="./public/assets/images/popup/add_icon.png" alt="Adicionar">
         </div>`;
         
         this.cartIndex = 0;
